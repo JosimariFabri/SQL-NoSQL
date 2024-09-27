@@ -1,0 +1,20 @@
+Exercício 2: Nas mesmas buscas do exercício anterior, traga apenas o número do resultado usando o contador
+
+db.biblioteca.find({status: {$nin: ["PUBLISH"]}, pageCount: {$lt: 300}}).count()
+
+resposta: 64
+
+
+db.biblioteca.find({title: {$regex: /MongoDB|SQL Server/}}, {title: true}).count()
+
+resposta: 10
+
+
+db.biblioteca.find({isbn: {$regex: /^18/}}, {isbn: true}).count()
+
+resposta: 47
+
+
+db.biblioteca.find({longDescription: {$regex: /.ava\b|.obile/}}, {longDescription: true}).count()
+
+resposta: 111
